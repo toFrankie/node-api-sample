@@ -14,7 +14,7 @@ router.get('/favicon.ico', (req, res) => {
   res.sendFile(path.resolve(__dirname, './favicon.ico'))
 })
 
-router.get('/user/:id', (req, res, ...rest) => {
+router.get('/user/:id', (req, res) => {
   const randomKey = Math.random().toString(36).slice(2)
   const { id } = req.params
   res
