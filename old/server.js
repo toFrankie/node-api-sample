@@ -6,7 +6,7 @@ const localIPAddress = getNetWorkIP()
 const allowedOrigin = ''
 const port = 7701
 
-let num = 0
+const num = 0
 
 const server = http.createServer((request, response) => {
   console.log('')
@@ -19,7 +19,6 @@ const server = http.createServer((request, response) => {
     response.setHeader('Access-Control-Allow-Headers', 'Content-Type,Content-Length,Authorization,Accept,X-Requested-With')
     response.setHeader('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS')
   }
-
 
   if (request.url === '/') {
     console.log(request.headers)
@@ -52,18 +51,16 @@ const server = http.createServer((request, response) => {
       // response.writeHead(200, { 'Content-Type': 'application/json;charset=UTF-8' })
 
       console.log(request.headers)
-      response.setHeader('Set-Cookie', ['name=Frankie; domain=192.168.1.114; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT; max-age=3600']);
+      response.setHeader('Set-Cookie', ['name=Frankie; domain=192.168.1.114; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT; max-age=3600'])
       // end 只能传 string 或 Buffer
       // response.end(JSON.stringify(data))
       response.end(JSON.stringify({ name: 'Frankie', age: 20 }))
       // response.json(data)
-
     })
   } else if (request.url === '/auth') {
     response.setHeader('Set-Cookie', ['test=123'])
     response.end(JSON.stringify({ userId: Math.random().toString(36).slice(2) }))
-  }
-  else {
+  } else {
     console.log('其他请求', request.url)
   }
 })

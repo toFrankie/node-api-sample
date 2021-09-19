@@ -19,7 +19,7 @@ router.get('/user/:id', (req, res) => {
   const { id } = req.params
   res
     .status(200)
-    .cookie('id', randomKey, { 'maxAge': 60 * 60 })
+    .cookie('id', randomKey, { maxAge: 60 * 60 })
     .send({
       key: randomKey,
       id,
