@@ -1,17 +1,17 @@
-const os = require('os')
+import os from 'os'
 
-/** 获取本机IP */
+// 获取 IP Address
 const getNetWorkIP = () => {
   let host = ''
   let getFlag = false
   try {
     // 获取网络接口列表
-    let network = os.networkInterfaces()
-    for (let dev in network) {
+    const network = os.networkInterfaces()
+    for (const dev in network) {
       if (getFlag) break
-      let iface = network[dev]
+      const iface = network[dev]
       for (let i = 0; i < iface.length; i++) {
-        let alias = iface[i]
+        const alias = iface[i]
         if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
           host = alias.address
           getFlag = true
@@ -26,6 +26,4 @@ const getNetWorkIP = () => {
   return host
 }
 
-module.exports = {
-  getNetWorkIP
-}
+export default getNetWorkIP

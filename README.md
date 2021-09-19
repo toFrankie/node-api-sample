@@ -1,9 +1,11 @@
-# HelloNodeJs
+# 说明
 
-一个极简单的 NodeJS 接口程序
+仅测试而已，无其他用途...
 
-安装 Node.js 之后，输入命令启动即可
+```shell
+# install
+$ yarn
 
-```
-$ node server.js
+# run
+$ yarn start
 ```
