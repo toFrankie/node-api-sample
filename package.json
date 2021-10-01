@@ -1,11 +1,11 @@
 {
-  "name": "hello-node",
+  "name": "node-api-sample",
   "version": "1.0.0",
   "main": "src/index.js",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/toFrankie/HelloNode.git"
+    "url": "https://github.com/toFrankie/node-api-sample.git"
   },
   "author": "Frankie <1426203851@qq.com>",
   "license": "MIT",
